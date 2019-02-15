@@ -14,10 +14,11 @@ class Proposer
      */
     protected $catalogues;
 
+
     /**
      * @ORM\ManyToOne(targetEntity=Formations::class)
      */
-    protected $formation;
+    protected $formations;
 
     /**
      * @ORM\ManyToOne(targetEntity=CentresFormations::class)
@@ -54,24 +55,24 @@ class Proposer
         return $this->id;
     }
 
-    public function getCatalogue(): ?int
+    public function getCatalogues(): ?int
     {
         return $this->catalogues;
     }
 
-    public function setCatalogue(int $catalogue): self
+    public function setCatalogues(int $catalogue): self
     {
         $this->catalogues = $catalogue;
 
         return $this;
     }
 
-    public function getFormations(): ?int
+    public function getFormation(): ?int
     {
         return $this->formations;
     }
 
-    public function setFormations(int $formation): self
+    public function setFormation(int $formation): self
     {
         $this->formations = $formation;
 
@@ -88,5 +89,17 @@ class Proposer
         $this->centresFormations = $centreFormation;
 
         return $this;
+    }
+
+    /**
+     * Generates the magic method
+     */
+    public function __toString()
+    {
+        // to show the name of the Category in the select
+        return $this->getFormation();
+        // to show the id of the Category in the select
+        // return $this->id;
+
     }
 }
