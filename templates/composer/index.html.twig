@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Composer index{% endblock %}
+
+{% block body %}
+    <h1>Composer index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Id_Eleves</th>
+                <th>Id_Salles</th>
+                <th>Id_Formateurs</th>
+                <th>Id_Materiels</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for composer in composers %}
+            <tr>
+                <td>{{ composer.id }}</td>
+                <td>{{ composer.idEleves }}</td>
+                <td>{{ composer.idSalles }}</td>
+                <td>{{ composer.idFormateurs }}</td>
+                <td>{{ composer.idMateriels }}</td>
+                <td>
+                    <a href="{{ path('composer_show', {'id': composer.id}) }}">show</a>
+                    <a href="{{ path('composer_edit', {'id': composer.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('composer_new') }}">Create new</a>
+{% endblock %}

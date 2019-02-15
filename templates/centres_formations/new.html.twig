@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New CentresFormations{% endblock %}
+
+{% block body %}
+    <h1>Create new CentresFormations</h1>
+
+    {{ include('centres_formations/_form.html.twig') }}
+
+    <a href="{{ path('centres_formations_index') }}">back to list</a>
+{% endblock %}

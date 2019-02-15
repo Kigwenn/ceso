@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit CentresFormations{% endblock %}
+
+{% block body %}
+    <h1>Edit CentresFormations</h1>
+
+    {{ include('centres_formations/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('centres_formations_index') }}">back to list</a>
+
+    {{ include('centres_formations/_delete_form.html.twig') }}
+{% endblock %}

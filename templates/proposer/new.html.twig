@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Proposer{% endblock %}
+
+{% block body %}
+    <h1>Create new Proposer</h1>
+
+    {{ include('proposer/_form.html.twig') }}
+
+    <a href="{{ path('proposer_index') }}">back to list</a>
+{% endblock %}

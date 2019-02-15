@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Proposer{% endblock %}
+
+{% block body %}
+    <h1>Edit Proposer</h1>
+
+    {{ include('proposer/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('proposer_index') }}">back to list</a>
+
+    {{ include('proposer/_delete_form.html.twig') }}
+{% endblock %}

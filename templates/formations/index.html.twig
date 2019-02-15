@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Formations index{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-lg-offset-4 col-lg-4 text-center" style="margin-top: 20px">
+            <bouton type="bouton" class="btn btn-default">
+                <a  href="{{ path('centres_formations_index') }}" style="color: #000"><i clsss="fa fa-fw fa-plus"></i>Centres de formations</a>
+            </bouton>
+            <bouton type="bouton" class="btn btn-success">
+                <a  href="{{ path('formations_index') }}" style="color: #FFF"><i clsss="fa fa-fw fa-plus"></i>Formation</a>
+            </bouton>
+            <bouton type="bouton" class="btn btn-default">
+                <a  href="{{ path('catalogues_index') }}" style="color: #000"><i clsss="fa fa-fw fa-plus"></i>Catalogues</a>
+            </bouton>
+            <bouton type="bouton" class="btn btn-default">
+                <a  href="{{ path('proposer_index') }}" style="color: #000"><i clsss="fa fa-fw fa-plus"></i>Formation commander</a>
+            </bouton>
+        </div>
+    </div>
+
+    <h1 class="col-lg-offset-1 col-lg-10">Liste des formations</h1>
+
+    <table class="col-lg-offset-2 col-lg-8 table-responsive" style="margin-top: 40px;">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Date de debut</th>
+                <th>Nombre de participants</th>
+                <th class="text-right">actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for formation in formations %}
+            <tr>
+                <td>{{ formation.id }}</td>
+                <td>{{ formation.dateDeb ? formation.dateDeb|date('Y-m-d') : '' }}</td>
+                <td>{{ formation.nbParticipant }}</td>
+                <td class="text-right">
+                    <bouton type="bouton" class="btn btn-info">
+                        <a href="{{ path('formations_show', {'id': formation.id}) }}" style="color: #000"><i clsss="fa fa-fw fa-eye"></i>Consulter</a>
+                    </bouton>
+                    <bouton type="bouton" class="btn btn-warning">
+                        <a  href="{{ path('formations_edit', {'id': formation.id}) }}" style="color: #000"><i clsss="fa fa-fw fa-edit"></i>Editer</a>
+                    </bouton>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="row">
+        <div class="col-lg-offset-4 col-lg-4 text-center" style="margin-top: 20px">
+            <bouton type="bouton" class="btn btn-success">
+                <a  href="{{ path('formations_new') }}" style="color: #FFF"><i clsss="fa fa-fw fa-plus"></i>Creer une nouvelle formation</a>
+            </bouton>
+        </div>
+    </div>
+{% endblock %}

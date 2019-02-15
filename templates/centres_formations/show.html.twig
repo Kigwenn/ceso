@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CentresFormations{% endblock %}
+
+{% block body %}
+    <h1>CentresFormations</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ centres_formation.id }}</td>
+            </tr>
+            <tr>
+                <th>Rs</th>
+                <td>{{ centres_formation.rs }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ centres_formation.nom }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ centres_formation.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Cp</th>
+                <td>{{ centres_formation.cp }}</td>
+            </tr>
+            <tr>
+                <th>Tel</th>
+                <td>{{ centres_formation.tel }}</td>
+            </tr>
+            <tr>
+                <th>Fax</th>
+                <td>{{ centres_formation.fax }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ centres_formation.email }}</td>
+            </tr>
+            <tr>
+                <th>Tva</th>
+                <td>{{ centres_formation.tva }}</td>
+            </tr>
+            <tr>
+                <th>Ape</th>
+                <td>{{ centres_formation.ape }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('centres_formations_index') }}">back to list</a>
+
+    <a href="{{ path('centres_formations_edit', {'id': centres_formation.id}) }}">edit</a>
+
+    {{ include('centres_formations/_delete_form.html.twig') }}
+{% endblock %}

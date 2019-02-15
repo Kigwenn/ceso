@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Proposer index{% endblock %}
+
+{% block body %}
+    <h1>Proposer index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for proposer in proposers %}
+            <tr>
+                <td>{{ proposer.id }}</td>
+                <td>
+                    <a href="{{ path('proposer_show', {'id': proposer.id}) }}">show</a>
+                    <a href="{{ path('proposer_edit', {'id': proposer.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="2">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('proposer_new') }}">Create new</a>
+{% endblock %}
