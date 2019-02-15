@@ -3,22 +3,40 @@
 {% block title %}CentresFormations index{% endblock %}
 
 {% block body %}
-    <h1>CentresFormations index</h1>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
-    <table class="table">
+    <div class="row">
+        <div class="col-lg-offset-4 col-lg-4 text-center" style="margin-top: 20px">
+            <bouton type="bouton" class="btn btn-success">
+                <a  href="{{ path('centres_formations_index') }}" style="color: #FFF"><i clsss="fa fa-fw fa-plus"></i>Centres de formations</a>
+            </bouton>
+            <bouton type="bouton" class="btn btn-default">
+                <a  href="{{ path('formations_index') }}" style="color: #000"><i clsss="fa fa-fw fa-plus"></i>Formation</a>
+            </bouton>
+            <bouton type="bouton" class="btn btn-default">
+                <a  href="{{ path('catalogues_index') }}" style="color: #000"><i clsss="fa fa-fw fa-plus"></i>Catalogues</a>
+            </bouton>
+            <bouton type="bouton" class="btn btn-default">
+                <a  href="{{ path('proposer_index') }}" style="color: #000"><i clsss="fa fa-fw fa-plus"></i>Formation commander</a>
+            </bouton>
+        </div>
+    </div>
+    <h1 class="col-lg-offset-1 col-lg-10">Liste des centres de formations</h1>
+
+    <table class="col-lg-offset-2 col-lg-8 table-responsive" style="margin-top: 40px;">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Rs</th>
+                <th>Raison social</th>
                 <th>Nom</th>
                 <th>Adresse</th>
-                <th>Cp</th>
+                <th>Code postal</th>
                 <th>Tel</th>
                 <th>Fax</th>
                 <th>Email</th>
-                <th>Tva</th>
-                <th>Ape</th>
-                <th>actions</th>
+                <th>Code TVA</th>
+                <th>Code APE</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -34,9 +52,13 @@
                 <td>{{ centres_formation.email }}</td>
                 <td>{{ centres_formation.tva }}</td>
                 <td>{{ centres_formation.ape }}</td>
-                <td>
-                    <a href="{{ path('centres_formations_show', {'id': centres_formation.id}) }}">show</a>
-                    <a href="{{ path('centres_formations_edit', {'id': centres_formation.id}) }}">edit</a>
+                <td class="text-right">
+                    <bouton type="bouton" class="btn btn-info">
+                        <a href="{{ path('centres_formations_show', {'id': formation.id}) }}" style="color: #000"><i clsss="fa fa-fw fa-eye"></i>Consulter</a>
+                    </bouton>
+                    <bouton type="bouton" class="btn btn-warning">
+                        <a  href="{{ path('centres_formations_edit', {'id': formation.id}) }}" style="color: #000"><i clsss="fa fa-fw fa-edit"></i>Editer</a>
+                    </bouton>
                 </td>
             </tr>
         {% else %}
@@ -47,5 +69,11 @@
         </tbody>
     </table>
 
-    <a href="{{ path('centres_formations_new') }}">Create new</a>
+    <div class="row">
+        <div class="col-lg-offset-4 col-lg-4 text-center" style="margin-top: 20px">
+            <bouton type="bouton" class="btn btn-success">
+                <a  href="{{ path('centres_formations_new') }}" style="color: #FFF"><i clsss="fa fa-fw fa-plus"></i>Creer un nouveau centre de formation</a>
+            </bouton>
+        </div>
+    </div>
 {% endblock %}

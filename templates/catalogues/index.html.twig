@@ -1,17 +1,34 @@
 {% extends 'base.html.twig' %}
 {% block title %}Catalogues index{% endblock %}
-
 {% block body %}
-    <h1>Catalogues index</h1>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
-    <table class="table">
+    <div class="row">
+        <div class="col-lg-offset-4 col-lg-4 text-center" style="margin-top: 20px">
+            <bouton type="bouton" class="btn btn-default">
+                <a  href="{{ path('centres_formations_index') }}" style="color: #000"><i clsss="fa fa-fw fa-plus"></i>Centres de formations</a>
+            </bouton>
+            <bouton type="bouton" class="btn btn-default">
+                <a  href="{{ path('formations_index') }}" style="color: #000"><i clsss="fa fa-fw fa-plus"></i>Formation</a>
+            </bouton>
+            <bouton type="bouton" class="btn btn-success">
+                <a  href="{{ path('catalogues_index') }}" style="color: #fff"><i clsss="fa fa-fw fa-plus"></i>Catalogues</a>
+            </bouton>
+            <bouton type="bouton" class="btn btn-default">
+                <a  href="{{ path('proposer_index') }}" style="color: #000"><i clsss="fa fa-fw fa-plus"></i>Formation commander</a>
+            </bouton>
+        </div>
+    </div>
+    <h1 class="col-lg-offset-1 col-lg-10">Liste des catalogues</h1>
+
+    <table class="col-lg-offset-2 col-lg-8 table-responsive" style="margin-top: 40px;">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Nom</th>
                 <th>Duree</th>
                 <th>Tarif</th>
-                <th>actions</th>
+                <th class="text-right">actions</th>
             </tr>
         </thead>
         <tbody>
@@ -21,9 +38,13 @@
                 <td>{{ catalogue.nom }}</td>
                 <td>{{ catalogue.duree }}</td>
                 <td>{{ catalogue.tarif }}</td>
-                <td>
-                    <a href="{{ path('catalogues_show', {'id': catalogue.id}) }}">show</a>
-                    <a href="{{ path('catalogues_edit', {'id': catalogue.id}) }}">edit</a>
+                <td class="text-right">
+                    <bouton type="bouton" class="btn btn-info">
+                        <a href="{{ path('catalogues_show', {'id': formation.id}) }}" style="color: #000"><i clsss="fa fa-fw fa-eye"></i>Consulter</a>
+                    </bouton>
+                    <bouton type="bouton" class="btn btn-warning">
+                        <a  href="{{ path('catalogues_edit', {'id': formation.id}) }}" style="color: #000"><i clsss="fa fa-fw fa-edit"></i>Editer</a>
+                    </bouton>
                 </td>
             </tr>
         {% else %}
@@ -34,5 +55,11 @@
         </tbody>
     </table>
 
-    <a href="{{ path('catalogues_new') }}">Create new</a>
+    <div class="row">
+        <div class="col-lg-offset-4 col-lg-4 text-center" style="margin-top: 20px">
+            <bouton type="bouton" class="btn btn-success">
+                <a  href="{{ path('catalogues_new') }}" style="color: #FFF"><i clsss="fa fa-fw fa-plus"></i>Creer un nouveau catalogue</a>
+            </bouton>
+        </div>
+    </div>
 {% endblock %}
