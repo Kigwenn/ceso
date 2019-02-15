@@ -6,6 +6,12 @@
     <h1>Create new Formations</h1>
 
     {{ include('formations/_form.html.twig') }}
-
-    <a href="{{ path('formations_index') }}">back to list</a>
+    <div class="row">
+        <div class="col-lg-offset-4 col-lg-4 text-center" style="margin-top: 20px">
+            <bouton type="bouton" class="btn btn-success">
+                <a  href="{{ path('formations_index') }}" style="color: #FFF"><i clsss="fa fa-fw fa-arrow-left"></i>retour</a>
+            </bouton>r
+        </div>
+    </div>
+    <a href="{{ path('formations_index') }}">retour</a>
 {% endblock %}

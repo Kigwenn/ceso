@@ -12,8 +12,8 @@ class ProposerType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('catalogue')
-            ->add('formations')
+            ->add('catalogues')
+            ->add('formation')
             ->add('centresFormations')
         ;
     }

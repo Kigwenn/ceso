@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     <div class="row">
-        <div class="col-lg-offset-4 col-lg-4 text-center" style="margin-top: 20px">
+        <div class="col-lg-offset-4 col-lg-4  col-sm-12 col-xs-12 text-center" style="margin-top: 20px">
             <bouton type="bouton" class="btn btn-success">
                 <a  href="{{ path('centres_formations_index') }}" style="color: #FFF"><i clsss="fa fa-fw fa-plus"></i>Centres de formations</a>
             </bouton>
@@ -21,43 +21,43 @@
             </bouton>
         </div>
     </div>
-    <h1 class="col-lg-offset-1 col-lg-10">Liste des centres de formations</h1>
+    <h1 class="col-lg-offset-1 col-sm-12 col-xs-12 col-lg-10">Liste des centres de formations</h1>
 
-    <table class="col-lg-offset-2 col-lg-8 table-responsive" style="margin-top: 40px;">
-        <thead>
+    <table class="col-lg-offset-2 col-sm-12 col-xs-12 col-lg-8 table-responsive" style="margin-top: 40px">
+        <thead style="border-bottom: solid 1px #000">
             <tr>
-                <th>Id</th>
-                <th>Raison social</th>
-                <th>Nom</th>
-                <th>Adresse</th>
-                <th>Code postal</th>
-                <th>Tel</th>
-                <th>Fax</th>
-                <th>Email</th>
-                <th>Code TVA</th>
-                <th>Code APE</th>
-                <th>Actions</th>
+                <th class="text-center">Id</th>
+                <th class="text-center">Raison social</th>
+                <th class="text-center">Nom</th>
+                <th class="text-center">Adresse</th>
+                <th class="text-center">Code postal</th>
+                <th class="text-center">Tel</th>
+                <th class="text-center">Fax</th>
+                <th class="text-center">Email</th>
+                <th class="text-center">Code TVA</th>
+                <th class="text-center">Code APE</th>
+                <th class="text-center">Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for centres_formation in centres_formations %}
             <tr>
-                <td>{{ centres_formation.id }}</td>
-                <td>{{ centres_formation.rs }}</td>
-                <td>{{ centres_formation.nom }}</td>
-                <td>{{ centres_formation.adresse }}</td>
-                <td>{{ centres_formation.cp }}</td>
-                <td>{{ centres_formation.tel }}</td>
-                <td>{{ centres_formation.fax }}</td>
-                <td>{{ centres_formation.email }}</td>
-                <td>{{ centres_formation.tva }}</td>
-                <td>{{ centres_formation.ape }}</td>
-                <td class="text-right">
+                <td class="text-center">{{ centres_formation.id }}</td>
+                <td class="text-center">{{ centres_formation.rs }}</td>
+                <td class="text-center">{{ centres_formation.nom }}</td>
+                <td class="text-center">{{ centres_formation.adresse }}</td>
+                <td class="text-center">{{ centres_formation.cp }}</td>
+                <td class="text-center">{{ centres_formation.tel }}</td>
+                <td class="text-center">{{ centres_formation.fax }}</td>
+                <td class="text-center">{{ centres_formation.email }}</td>
+                <td class="text-center">{{ centres_formation.tva }}</td>
+                <td class="text-center">{{ centres_formation.ape }}</td>
+                <td class="text-center" style="padding: 5px 0">
                     <bouton type="bouton" class="btn btn-info">
-                        <a href="{{ path('centres_formations_show', {'id': formation.id}) }}" style="color: #000"><i clsss="fa fa-fw fa-eye"></i>Consulter</a>
+                        <a href="{{ path('centres_formations_show', {'id': centres_formation.id}) }}" style="color: #000"><i clsss="fa fa-fw fa-eye"></i>Consulter</a>
                     </bouton>
                     <bouton type="bouton" class="btn btn-warning">
-                        <a  href="{{ path('centres_formations_edit', {'id': formation.id}) }}" style="color: #000"><i clsss="fa fa-fw fa-edit"></i>Editer</a>
+                        <a  href="{{ path('centres_formations_edit', {'id': centres_formation.id}) }}" style="color: #000"><i clsss="fa fa-fw fa-edit"></i>Editer</a>
                     </bouton>
                 </td>
             </tr>
@@ -70,7 +70,7 @@
     </table>
 
     <div class="row">
-        <div class="col-lg-offset-4 col-lg-4 text-center" style="margin-top: 20px">
+        <div class="col-lg-offset-4 col-lg-4  col-sm-12 col-xs-12 text-center" style="margin-top: 20px">
             <bouton type="bouton" class="btn btn-success">
                 <a  href="{{ path('centres_formations_new') }}" style="color: #FFF"><i clsss="fa fa-fw fa-plus"></i>Creer un nouveau centre de formation</a>
             </bouton>

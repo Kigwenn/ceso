@@ -1,11 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New CentresFormations{% endblock %}
+{% block title %}Nouveau centre de formation{% endblock %}
 
 {% block body %}
-    <h1>Create new CentresFormations</h1>
+    <h1 class="col-lg-offset-1 col-lg-10">Creer un nouveau centre de formation</h1>
 
-    {{ include('centres_formations/_form.html.twig') }}
+    <div class="col-lg-offset-2 col-lg-8 table-responsive" style="margin-top: 40px;">
+        {{ include('centres_formations/_form.html.twig') }}
+    </div>
 
-    <a href="{{ path('centres_formations_index') }}">back to list</a>
+    <div style="padding-top: 20px">
+        <bouton type="bouton" class="btn btn-success">
+            <a href="{{ path('centres_formations_index') }}" style="color: #FFF"><i clsss="fa fa-fw fa-plus"></i>Retour à la liste</a>
+        </bouton>
+    </div>
 {% endblock %}

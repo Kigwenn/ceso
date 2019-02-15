@@ -19,26 +19,26 @@
             </bouton>
         </div>
     </div>
-    <h1 class="col-lg-offset-1 col-lg-10">Liste des catalogues</h1>
+    <h1 class="col-lg-offset-2 col-lg-8">Liste des catalogues</h1>
 
-    <table class="col-lg-offset-2 col-lg-8 table-responsive" style="margin-top: 40px;">
-        <thead>
+    <table class="col-lg-offset-2 col-lg-8 table-responsive" style="margin-top: 40px">
+        <thead style="border-bottom: solid 1px #000">
             <tr>
-                <th>Id</th>
-                <th>Nom</th>
-                <th>Duree</th>
-                <th>Tarif</th>
-                <th class="text-right">actions</th>
+                <th class="text-center">Id</th>
+                <th class="text-center">Nom</th>
+                <th class="text-center">Duree</th>
+                <th class="text-center">Tarif</th>
+                <th class="text-center">actions</th>
             </tr>
         </thead>
         <tbody>
         {% for catalogue in catalogues %}
             <tr>
-                <td>{{ catalogue.id }}</td>
-                <td>{{ catalogue.nom }}</td>
-                <td>{{ catalogue.duree }}</td>
-                <td>{{ catalogue.tarif }}</td>
-                <td class="text-right">
+                <td class="text-center">{{ catalogue.id }}</td>
+                <td class="text-center">{{ catalogue.nom }}</td>
+                <td class="text-center">{{ catalogue.duree }}</td>
+                <td class="text-center">{{ catalogue.tarif }}</td>
+                <td class="text-center">
                     <bouton type="bouton" class="btn btn-info">
                         <a href="{{ path('catalogues_show', {'id': formation.id}) }}" style="color: #000"><i clsss="fa fa-fw fa-eye"></i>Consulter</a>
                     </bouton>

@@ -38,6 +38,7 @@ class ProposerController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($proposer);
             $entityManager->flush();
+
             return $this->redirectToRoute('proposer_index');
         }
 
